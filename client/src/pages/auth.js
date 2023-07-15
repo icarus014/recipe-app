@@ -93,7 +93,7 @@ const Form = ({username, setUsername, password, setPassword,label, onSubmit}) =>
                         <label htmlFor="password">Password</label>
                         <input type="password" id="password" value={password} onChange={(event) => setPassword(event.target.value)}/>
                     </div>
-                    <button type="submit">Register</button>
+                    <button type="submit">{label}</button>
                 </form>
             </div>
     )
