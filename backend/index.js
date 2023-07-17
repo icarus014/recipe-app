@@ -12,7 +12,7 @@ const app = express()
 app.use(express.json());
     // helps make api reqs
 app.use(cors())
-
+// routes
 app.use("/auth", userRouter)
 app.use("/recipes", recipesRouter)
 
