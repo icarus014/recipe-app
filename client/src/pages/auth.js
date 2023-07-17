@@ -53,7 +53,7 @@ const Login = ()=>{
 };
 
 
-const Register = ( )=>{
+const Register = ()=>{
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
     const onSubmit = async (event) =>{
