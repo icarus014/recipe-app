@@ -1,6 +1,7 @@
 import express from "express"
 import mongoose from "mongoose"
 import { RecipeModel } from "../models/recipes.js";
+import { UserModel } from "../models/users.js";
 
 const router = express.Router()
 
@@ -20,6 +21,19 @@ router.post("/", async(req, res) =>{
     try{
         const response = await recipe.save();
         res.json(response);
+    } catch(err){
+        res.json(err)
+    }
+})
+// put request
+router.put("/", async(req, res) =>{
+    try{
+        // showing user and recipes they saved
+        const recipe = await RecipeModel.findById(req.body.recipeId)
+        const user = await UserModel.findById(req.body.userId)
+        user.savedRecipes.push(recipe);
+        await user.save();
+        res.json({savedRecipes: user.savedRecipes});
     } catch(err){
         res.json(err)
     }
