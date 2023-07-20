@@ -10,7 +10,6 @@ export const Auth = () =>{
             <Register />
         </div>
     )
-
 }
 
 
