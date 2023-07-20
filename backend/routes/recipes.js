@@ -39,9 +39,9 @@ router.put("/", async(req, res) =>{
     }
 })
 // getting the list of saved recipes by ID
-router.get("/savedrecipes/ids", async(req, res)=>{
+router.get("/savedrecipes/ids/:userID", async(req, res)=>{
     try{
-        const user = await UserModel.findById(req.body.userId)
+        const user = await UserModel.findById(req.params.userId)
         res.json({savedRecipes: user?.savedRecipes})
     } catch(err){
         res.json(err)
