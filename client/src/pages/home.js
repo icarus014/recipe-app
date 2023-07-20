@@ -31,7 +31,7 @@ export const Home = () => {
 
     fetchRecipes();
     fetchSavedRecipes();
-  }, []);
+  }, [userID]);
 
   const saveRecipe = async (recipeID) => {
     try {
@@ -55,8 +55,15 @@ export const Home = () => {
           <li key={recipe._id}>
             <div>
               <h2>{recipe.name}</h2>
+              {/* <button 
+              onClick={() => saveRecipe(recipe._id)}
+              disabled={isRecipeSaved(recipe._id)}
+              >
+                {isRecipeSaved(recipe._id)? "Saved": "Save"}
+              </button> */}
             </div>
             <div className="instructions">
+                <p>{recipe.ingredients}</p>
               <p>{recipe.instructions}</p>
             </div>
             <img src={recipe.imageUrl} alt={recipe.name} />
