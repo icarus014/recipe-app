@@ -48,12 +48,12 @@ router.get("/savedrecipes/ids/:userID", async(req, res)=>{
     }
 })
 
-router.get("/savedRecipes", async(req, res)=>{
+router.get("/saved-recipes", async(req, res)=>{
     try{
         const user = await UserModel.findById(req.body.userId)
         // matching any of the values in an array
         const savedRecipes = await RecipeModel.find({_id:{$in:user.savedRecipes}})
-        es.json({savedRecipes})
+        res.json({savedRecipes})
     }catch(err){
         res.json(err)
     }
