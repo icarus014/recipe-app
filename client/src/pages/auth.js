@@ -38,28 +38,32 @@ const Login = () => {
   };
 
   return (
-    <div className="auth-container">
-      <form onSubmit={handleSubmit}>
-        <h2>Login</h2>
-        <div className="form-group">
-          <label htmlFor="username">Username:</label>
+    <div className="w-full max-w-xs float-right ml-28">
+      <form onSubmit={handleSubmit} className="bg-stone-300 shadow-xl rounded px-8 pt-6 pb-8 mb-4">
+        <h2 className=" font-bold text-gray-700 mx-24">Login</h2>
+        <div className="mb-4">
+          <label htmlFor="username" className="ml-5 font-bold text-gray-700">Username</label>
           <input
             type="text"
             id="username"
             value={username}
             onChange={(event) => setUsername(event.target.value)}
+            className="shadow-xl appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-non focus:shadow-outline"
           />
         </div>
-        <div className="form-group">
-          <label htmlFor="password">Password:</label>
+        <div className="mb-4 ">
+          <label htmlFor="password" className="ml-5 font-bold text-gray-700">Password</label>
           <input
             type="password"
             id="password"
             value={password}
             onChange={(event) => setPassword(event.target.value)}
+            className="shadow-xl appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-non focus:shadow-outline"
           />
         </div>
-        <button type="submit">Login</button>
+        <div className="flex items-center justify-bewteen">
+          <button type="submit" className="bg-neutral-500 hover:bg-neutral-700 text-white font-bold py-2 px-4 rounded focuse:outline-none focus:shadow-outline ">Login</button>
+        </div>
       </form>
     </div>
   );
@@ -86,29 +90,33 @@ const Register = () => {
   };
 
   return (
-    <div className="auth-container">
-      <form onSubmit={handleSubmit}>
-        <h2>Register</h2>
-        <div className="form-group">
-          <label htmlFor="username">Username:</label>
-          <input
-            type="text"
-            id="username"
-            value={username}
-            onChange={(event) => setUsername(event.target.value)}
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="password">Password:</label>
-          <input
-            type="password"
-            id="password"
-            value={password}
-            onChange={(event) => setPassword(event.target.value)}
-          />
-        </div>
-        <button type="submit">Register</button>
-      </form>
-    </div>
+    <div className="w-full max-w-xs float-left mr-auto">
+    <form onSubmit={handleSubmit} className="bg-stone-300 shadow-xl rounded px-8 pt-6 pb-8 mb-4">
+      <h2 className="ml-20 font-bold text-gray-700">Register</h2>
+      <div className="mb-4">
+        <label htmlFor="username" className="ml-5 font-bold text-gray-700">Username</label>
+        <input
+          type="text"
+          id="username"
+          value={username}
+          onChange={(event) => setUsername(event.target.value)}
+          className="shadow-xl appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-non focus:shadow-outline"
+        />
+      </div>
+      <div className="mb-4">
+        <label htmlFor="password" className="ml-5 font-bold text-gray-700">Password</label>
+        <input
+          type="password"
+          id="password"
+          value={password}
+          onChange={(event) => setPassword(event.target.value)}
+          className="shadow-xl appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-non focus:shadow-outline"
+        />
+      </div>
+      <div className="flex items-center justify-bewteen">
+        <button type="submit" className="bg-neutral-500 hover:bg-neutral-700 text-white font-bold py-2 px-4 rounded focuse:outline-none focus:shadow-outline ">Register Now</button>
+      </div>
+    </form>
+  </div>
   );
 };

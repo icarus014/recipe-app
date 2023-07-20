@@ -1,4 +1,5 @@
 import './App.css';
+import './index.css'
 import React from 'react'
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 import {Home} from './pages/home'
@@ -10,7 +11,8 @@ import { Navbar} from './components/navbar'
 
 function App(){
   return(
-    <div className='App'>
+    <div className='app felx'>
+      <div className='flex flex col items-center'>
       <Router>
         <Navbar />
         <Routes>
@@ -20,6 +22,7 @@ function App(){
           <Route path="/saved-recipes" element={<Saved/>}/>
         </Routes>
       </Router>
+      </div>
     </div>
   )
 }
