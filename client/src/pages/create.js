@@ -60,7 +60,9 @@ export const Create = () => {
     }
     return(
         <div className='w-full max-w-xs mb-96'>
-            <h2 className="text-stone-100 ml-20 mb-4 font-bold text-2xl">Create Your Recipe</h2>
+            <div className="mx-12">                
+                <h2 className="text-stone-100  mb-4 font-bold text-2xl">Create Your Recipe</h2>
+            </div>
             <form onSubmit={handleSubmit} className="bg-white text-gray-700 shadow-md rounded-lg font-bold">
                 {/* Name */}
                 <div>
@@ -97,12 +99,13 @@ export const Create = () => {
                 onClick={handleAddIngredient} 
                 type="button"
                 className="bg-slate-500 hover:bg-blue-400 rounded-md ml-24 mb-10 font-bold py-1 px-2 text-lg focus:outline-none focus:shadow-outline">
-                Add Ingredients
+                Add Ingredient
                 </button>
 
                 {/* Description */}
                 <label htmlFor="description">Description</label>
                 <textarea 
+                className="shadow-xl appearance-none border rounded w-full py-1 px-3 mb-4 text-grey-700 leading-tight focus:outline-none"
                 id="description" 
                 name="description" 
                 value={recipe.description} 
@@ -112,6 +115,7 @@ export const Create = () => {
                 {/* INSTRUCTIONS */}
                 <label htmlFor="instructions">Instructions</label>
                 <textarea 
+                className="shadow-xl appearance-none border rounded w-full py-1 px-3 mb-4 text-grey-700 leading-tight focus:outline-none"
                 id="instructions" 
                 name="instructions" 
                 value={recipe.instructions} 
@@ -121,21 +125,19 @@ export const Create = () => {
                 <br/>
                 {/* IMAGE URL */}
                 <label htmlFor="imageUrl">Image URL</label>
-                <input type="text" id="imageUrl"name="imageUrl" onChange={handleChange}/>
+                <input type="text" id="imageUrl"name="imageUrl" onChange={handleChange} className="shadow-xl appearance-none border rounded w-full py-1 px-3 mb-4 text-grey-700 leading-tight focus:outline-none"/>
                 <br/>
                 <br/>
                 {/* Cooking Time */}
                 <label htmlFor="cookingTime">Cook Time(min)</label>
                 <input 
+                className="hover:shadow-xl  shadow-xl appearance-none border rounded w-full py-1 px-3 mb-4 text-grey-700 leading-tight focus:outline-none"
                 type="number" 
                 id="cookingTime" 
                 name="cookingTime" 
                 value={recipe.cookingTime} 
                 onChange={handleChange}
                 />
-                    <br/>
-                    <br/>
-                    <br/>
                 <button type="submit" className="bg-slate-500 hover:bg-blue-400 rounded-md ml-24 mb-10 font-bold py-1 px-2 text-lg focus:outline-none focus:shadow-outline">
                     Create Recipe
                     </button>
