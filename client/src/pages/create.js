@@ -59,7 +59,7 @@ export const Create = () => {
         }
     }
     return(
-        <div className='w-full max-w-xs mb-96'>
+        <div className='w-full max-w-xs mb-96 text-lg'>
             <div className="mx-12">                
                 <h2 className="text-stone-100  mb-4 font-bold text-2xl">Create Your Recipe</h2>
             </div>
@@ -92,15 +92,15 @@ export const Create = () => {
                     className="shadow-xl appearance-none border rounded w-full py-1 px-3 mb-4 text-grey-700 leading-tight focus:outline-none"                    
                     />   
                 ))}
-                </div>
-
-
                 <button 
                 onClick={handleAddIngredient} 
                 type="button"
-                className="bg-slate-500 hover:bg-blue-400 rounded-md ml-24 mb-10 font-bold py-1 px-2 text-lg focus:outline-none focus:shadow-outline">
+                className="bg-slate-500 hover:bg-blue-400 rounded-md mx-24 mb-10 font-bold py-1 px-2 text-lg focus:outline-none focus:shadow-outline">
                 Add Ingredient
                 </button>
+                </div>
+
+
 
                 {/* Description */}
                 <label htmlFor="description">Description</label>
@@ -138,9 +138,10 @@ export const Create = () => {
                 value={recipe.cookingTime} 
                 onChange={handleChange}
                 />
-                <button type="submit" className="bg-slate-500 hover:bg-blue-400 rounded-md ml-24 mb-10 font-bold py-1 px-2 text-lg focus:outline-none focus:shadow-outline">
+                <button type="submit" className="bg-slate-500 hover:bg-blue-400 rounded-md mx-24 mb-10 font-bold py-1 px-2 text-lg focus:outline-none focus:shadow-outline">
                     Create Recipe
-                    </button>
+                </button>
+                
             </form>
         </div>
     )
