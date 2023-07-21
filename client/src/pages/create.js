@@ -59,40 +59,47 @@ export const Create = () => {
         }
     }
     return(
-        <div className='create-recipe'>
-            <h2>   Create Your Recipe</h2>
-            <form onSubmit={handleSubmit}>
+        <div className='w-full max-w-xs mb-96'>
+            <h2 className="text-stone-100 ml-20 mb-4 font-bold text-2xl">Create Your Recipe</h2>
+            <form onSubmit={handleSubmit} className="bg-white text-gray-700 shadow-md rounded-lg font-bold">
                 {/* Name */}
-                <label htmlFor="name">Name</label>
+                <div>
+                <label htmlFor="name" className="block text-gray-700 mb-2">Name</label>
                 <input 
                     type="text" 
                     id="name" 
                     name="name"
                     value={recipe.name}
                     onChange={handleChange}
+                    className="shadow-xl appearance-none border rounded w-full py-1 text-grey-700 leading-tight focus:outline-none mb-3 "
                     />
                 <br/>
                 {/* INGREDIENTS */}
-                <br/>
-                <label htmlFor="ingredients">Ingredients</label>
-                <br/>
+
+                </div>
+                {/* LABEL FOR INGREDIENTS */}
+                <div>                   
+                <label htmlFor="ingredients" className="block text-gray-700 mb-3 ">Ingredients</label>
                 {recipe.ingredients.map((ingredient, index)=>(
                     <input 
                     key={index} 
                     type="text" 
                     name="ingredients" 
                     value={ingredient}
-                    onChange={(event)=>handleIngredientChange(event,index)}/>
+                    onChange={(event)=>handleIngredientChange(event,index)}
+                    className="shadow-xl appearance-none border rounded w-full py-1 px-3 mb-4 text-grey-700 leading-tight focus:outline-none"                    
+                    />   
                 ))}
-                <br/>
+                </div>
+
 
                 <button 
                 onClick={handleAddIngredient} 
-                type="button">
-                    Add Ingredients
+                type="button"
+                className="bg-slate-500 hover:bg-blue-400 rounded-md ml-24 mb-10 font-bold py-1 px-2 text-lg focus:outline-none focus:shadow-outline">
+                Add Ingredients
                 </button>
 
-                <br/>
                 {/* Description */}
                 <label htmlFor="description">Description</label>
                 <textarea 
@@ -118,7 +125,7 @@ export const Create = () => {
                 <br/>
                 <br/>
                 {/* Cooking Time */}
-                <label htmlFor="cookingTime">Cook Time(minutes)</label>
+                <label htmlFor="cookingTime">Cook Time(min)</label>
                 <input 
                 type="number" 
                 id="cookingTime" 
@@ -129,7 +136,9 @@ export const Create = () => {
                     <br/>
                     <br/>
                     <br/>
-                <button type="submit">Create Recipe</button>
+                <button type="submit" className="bg-slate-500 hover:bg-blue-400 rounded-md ml-24 mb-10 font-bold py-1 px-2 text-lg focus:outline-none focus:shadow-outline">
+                    Create Recipe
+                    </button>
             </form>
         </div>
     )

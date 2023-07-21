@@ -38,9 +38,9 @@ const Login = () => {
   };
 
   return (
-    <div className="w-full max-w-md ml-28">
+    <div className="w-full max-w-md mx-auto">
       <form onSubmit={handleSubmit} className="bg-stone-300 shadow-xl rounded px-8 pt-6 pb-8 mb-4">
-        <h2 className=" font-bold text-gray-700 mx-24">Login</h2>
+        <h1 className=" font-bold text-2xl text-gray-700 mx-28">Login</h1>
         <div className="mb-4">
           <label htmlFor="username" className="ml-5 font-bold text-gray-700">Username</label>
           <input
@@ -91,9 +91,9 @@ const Register = () => {
   };
 
   return (
-    <div className="w-full max-w-xs  ">
+    <div className="w-full mx-auto max-w-md  ">
     <form onSubmit={handleSubmit} className="bg-stone-300 shadow-xl rounded px-8 pt-6 pb-8 mb-96">
-      <h2 className="ml-20 font-bold text-gray-700">Register</h2>
+      <h2 className="mx-24 text-2xl font-bold text-gray-700">Register</h2>
       <div className="mb-4">
         <label htmlFor="username" className="ml-5 font-bold text-gray-700">Username</label>
         <input
