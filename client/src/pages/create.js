@@ -57,13 +57,13 @@ export const Create = () => {
         } catch(err){
             console.error(err)
         }
-    }
+    };
     return(
         <div className='w-full max-w-xs mb-96 text-lg'>
             <div className="mx-12">                
                 <h2 className="text-stone-100  mb-4 font-bold text-2xl">Create Your Recipe</h2>
             </div>
-            <form onSubmit={handleSubmit} className="bg-white text-gray-700 shadow-md rounded-lg font-bold">
+            <form onSubmit={handleSubmit} className="bg-white text-gray-700 shadow-md rounded-lg font-bold px-3">
                 {/* Name */}
                 <div>
                 <label htmlFor="name" className="block text-gray-700 mb-2">Name</label>
