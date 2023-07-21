@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 export const Auth = () => {
   return (
-    <div className="auth">
+    <div className="flex-no-wrap mt-24">
       <Login />
       <Register />
     </div>
@@ -38,7 +38,7 @@ const Login = () => {
   };
 
   return (
-    <div className="w-full max-w-xs float-right ml-28">
+    <div className="w-full max-w-md ml-28">
       <form onSubmit={handleSubmit} className="bg-stone-300 shadow-xl rounded px-8 pt-6 pb-8 mb-4">
         <h2 className=" font-bold text-gray-700 mx-24">Login</h2>
         <div className="mb-4">
@@ -66,6 +66,7 @@ const Login = () => {
         </div>
       </form>
     </div>
+
   );
 };
 
@@ -90,8 +91,8 @@ const Register = () => {
   };
 
   return (
-    <div className="w-full max-w-xs float-left mr-auto">
-    <form onSubmit={handleSubmit} className="bg-stone-300 shadow-xl rounded px-8 pt-6 pb-8 mb-4">
+    <div className="w-full max-w-xs  ">
+    <form onSubmit={handleSubmit} className="bg-stone-300 shadow-xl rounded px-8 pt-6 pb-8 mb-96">
       <h2 className="ml-20 font-bold text-gray-700">Register</h2>
       <div className="mb-4">
         <label htmlFor="username" className="ml-5 font-bold text-gray-700">Username</label>

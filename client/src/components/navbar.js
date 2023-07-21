@@ -4,6 +4,7 @@ import { useCookies } from 'react-cookie'
 
 
 
+
 export const Navbar = () =>{
     const [cookies, setCookies]=useCookies(["access_token"]);
     const navigate = useNavigate()
@@ -14,11 +15,23 @@ export const Navbar = () =>{
         navigate("/auth")
     }
     return(
-        <div>
-            <Link to={"/"}>Home</Link>
-            <Link to={"/create"}>Create Recipe</Link>
-            <Link to={"/saved-recipes"}>Saved Recipes</Link>
-            {!cookies.access_token ? (<Link to={"/auth"}>Login / Register</Link>) :(<button onClick={logout}>Logout</button>)}
+        <nav className=" w-full bg-slate-300 ">
+        <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4 ">
+            <ul className="flex flex-col font-medium p-4 md:p-0 border rounded-lg md:flex-row md:space-x-8 md:mt-0 md:border-0  md:dark:bg-slate-90 dark:border-gray-700">
+                <li className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-stone md:dark:hover:text-red-900 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
+                <Link to={"/"}>Home</Link>
+                </li>
+                <li className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-stone md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
+                <Link to={"/create"}>Create Recipe</Link>
+                </li>
+                <li className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-stone md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
+                <Link to={"/saved-recipes"}>Saved Recipes</Link>
+                </li>
+                <li className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-stone md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
+                {!cookies.access_token ? (<Link to={"/auth"}>Login / Register</Link>) :(<button onClick={logout}>Logout</button>)}
+                </li>
+            </ul>
         </div>
+        </nav>
     )
 }
