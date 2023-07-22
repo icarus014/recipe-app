@@ -9,6 +9,7 @@ const RecipeSchema = new mongoose.Schema({
     instructions:[{type: String, required: true}],
     imageUrl:[{type: String, required: true}],
     imageUrl:{type: String, required: true},
+    description:[{type:String, required: true}],
     cookingTime: {type: String, required: true},
     userOwner:{type: mongoose.Schema.Types.ObjectId, ref:"users", required: true}
 

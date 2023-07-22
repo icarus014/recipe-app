@@ -48,29 +48,37 @@ export const Home = () => {
   const isRecipeSaved = (id) => savedRecipes.includes(id);
 
   return (
-    <div>
-      <h1 className="font-bold text-white">Recipes</h1>
-      <ul>
+    <div className="flex flex-col">
+        <h1 className="font-bold text-white mx-auto mb-5 text-4xl">Recipes</h1>
+      <div className="max-w-md rounded overflow-hidden shadow-xl">
         {recipes.map((recipe) => (
-          <li key={recipe._id}>
-            <div>
-              <h2>{recipe.name}</h2>
+          <ul key={recipe._id}>
+            <div className="bg-white px-14 pb-7 rounded-xl ">
+              <h2 className="font-bold text-stone-500 mx-auto mb-5 text-2xl">{recipe.name}</h2>
               <button 
               onClick={() => saveRecipe(recipe._id)}
               disabled={isRecipeSaved(recipe._id)}
-              >
+              className="bg-slate-500 hover:bg-blue-400 rounded-md mx-2 mb-10 font-bold py-1 px-2 text-lg focus:outline-none focus:shadow-outline">
+              
                 {isRecipeSaved(recipe._id)? "Saved": "Save"}
               </button>
+            <img src={recipe.imageUrl} alt={recipe.name}  className="rounded-xl max-w-xs mx-auto"/>
             </div>
-            <div className="instructions">
-                <p>{recipe.ingredients}</p>
-              <p>{recipe.instructions}</p>
+            <div className="text-gray-400">
+              <ul>
+                <li className="font-bold">
+                Ingredients: 
+                 <p className="text-md">
+                  {recipe.ingredients}
+                  </p>
+                </li>
+                <li>{recipe.instructions}</li>
+                <li className="mb-6">Cook Time: {recipe.cookingTime} minutes</li>
+              </ul>
             </div>
-            <img src={recipe.imageUrl} alt={recipe.name} />
-            <p>Cooking Time: {recipe.cookingTime} minutes</p>
-          </li>
+          </ul>
         ))}
-      </ul>
+      </div>
     </div>
   );
 };
