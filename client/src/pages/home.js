@@ -11,7 +11,7 @@ export const Home = () => {
   useEffect(() => {
     const fetchRecipes = async () => {
       try {
-        const response = await axios.get("https://recipe-app-fymu-git-main-icarus014.vercel.app/recipes");
+        const response = await axios.get("http://localhost:3001/recipes");
         setRecipes(response.data);
       } catch (err) {
         console.log(err);
@@ -21,7 +21,7 @@ export const Home = () => {
     const fetchSavedRecipes = async () => {
       try {
         const response = await axios.get(
-          `http://https://recipe-app-fymu-iuho9vs2d-icarus014.vercel.app/recipes/saved-recipes/ids/${userID}`
+          `http://http://localhost:3001/recipes/saved-recipes/ids/${userID}`
         );
         setSavedRecipes(response.data.savedRecipes);
       } catch (err) {
@@ -35,7 +35,7 @@ export const Home = () => {
 
   const saveRecipe = async (recipeID) => {
     try {
-      const response = await axios.put("https://recipe-app-fymu-git-main-icarus014.vercel.app/recipes", {
+      const response = await axios.put("http://localhost:3001/recipes", {
         recipeID,
         userID,
       });
