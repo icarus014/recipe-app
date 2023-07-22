@@ -31,7 +31,7 @@ export const Home = () => {
 
     fetchRecipes();
     fetchSavedRecipes();
-  }, []);
+  },[]);
 
   const saveRecipe = async (recipeID) => {
     try {
@@ -45,7 +45,7 @@ export const Home = () => {
     }
   };
 
-  const isRecipeSaved = (id) => savedRecipes.includes(id);
+  const isRecipeSaved = (_id) => savedRecipes.includes(_id);
 
   return (
     <div className="flex flex-col">
