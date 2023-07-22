@@ -1,4 +1,4 @@
-# recipe-app
+# Recipe-App
 This app is a MERN Stack REcipe App that allows the user to create and login to their own account. 
 
 # How it works
