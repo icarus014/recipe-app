@@ -1,5 +1,5 @@
 # Recipe-App
-This app is a MERN Stack REcipe App that allows the user to create and login to their own account. 
+This app is a MERN Stack Recipe App that allows the user to create and login to their own account. 
 
 # How it works
 The User can simply sign up and login by choosing a username and password of their choice. After doing so, the user can navigate to the create recipe page and the user can start making their recipe at that moment, by filling out the form provided. The form includes various inputs being, recipe name, ingredients, description, cook time, instructions, and an image url of the recipe.
