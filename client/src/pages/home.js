@@ -21,7 +21,7 @@ export const Home = () => {
     const fetchSavedRecipes = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:3001/recipes/saved-recipes/ids/${userID}`
+          `http://https://recipe-app-fymu-iuho9vs2d-icarus014.vercel.app/recipes/saved-recipes/ids/${userID}`
         );
         setSavedRecipes(response.data.savedRecipes);
       } catch (err) {
