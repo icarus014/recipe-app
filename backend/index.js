@@ -27,4 +27,4 @@ mongoose.connect("mongodb+srv://admin:rootadmin992@recipes.jpmwwnp.mongodb.net/r
     useUnifiedTopology: true,
 });
 
-app.listen(3000, () => console.log("Server Is Alive"))
+app.listen(3001, () => console.log("Server Is Alive"))
