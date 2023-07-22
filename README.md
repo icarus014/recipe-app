@@ -18,4 +18,4 @@ The technologies used to create this app include, React.js, axios, Mongo Atlas, 
 There is one bug included in this application, which is the save button feature, which would allow the user to save any recipe that they might have created. When clicking the save button on the recipe, the app crashes completely. 
 
 # Future functionality
-Some feature that will be coming soon, will include editing and deleting any created recipes by the user
+Some features that will be coming soon, will include editing and deleting any created recipes by the user
